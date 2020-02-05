@@ -1,7 +1,7 @@
 #
 # Builder
 #
-FROM abiosoft/caddy:builder as builder
+FROM docker.pkg.github.com/axlabs/caddy-docker/builder:latest as builder
 
 ARG version="1.0.3"
 ARG plugins="git,cors,realip,expires,cache,cloudflare"

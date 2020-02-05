@@ -3,6 +3,7 @@
 * This git repo is based on https://github.com/abiosoft/caddy-docker
 * It was modified and audited due to AxLabs requirements
 * The caddy:builder and caddy:latest are published on https://github.com/orgs/AxLabs/packages
+* [Here](#how-to-build) and [here](#how-to-push) are instructions on how to build and push to a docker repository
 
 # caddy
 
@@ -173,4 +174,17 @@ $ docker run -d \
     -v $(pwd)/Caddyfile:/etc/Caddyfile \
     -p 80:80 -p 443:443 \
     abiosoft/caddy
+```
+
+## How to Build
+
+```
+docker build --build-arg enable_telemetry="false" -t docker.pkg.github.com/axlabs/caddy-docker/caddy:latest -t docker.pkg.github.com/axlabs/caddy-docker/caddy:1.0.3 ./
+```
+
+## How to Push
+
+```
+docker push docker.pkg.github.com/axlabs/caddy-docker/caddy:latest
+docker push docker.pkg.github.com/axlabs/caddy-docker/caddy:1.0.3
 ```
